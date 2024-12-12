@@ -375,7 +375,7 @@ Based on the analysis above, here's a theoretical "ideal" chip that combines the
 - Limited software support
 
 ## 9. Lightmatter Photonic Chip
-[Company Research](https://lightmatter.co/technology/)
+[TechCrunch](https://techcrunch.com/2024/10/16/lightmatters-400m-d-round-has-ai-hyperscalers-hyped-for-photonic-datacenters/)
 
 ### Specifications
 - Photonic computing core
