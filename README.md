@@ -4,7 +4,7 @@ This repository contains detailed analysis of current and emerging AI accelerato
 
 ## Project Structure
 
-### Chip Analysis
+### Current Chip Analysis
 Detailed analysis of individual AI accelerator chips:
 - [NVIDIA H200](chips/nvidia-h200.md) - Latest Hopper Architecture
 - [Google TPU v5p](chips/google-tpu.md) - Cloud AI Accelerator
@@ -16,6 +16,17 @@ Detailed analysis of individual AI accelerator chips:
 - [EnCharge Edge](chips/encharge-edge.md) - Edge AI Accelerator
 - [Lightmatter](chips/lightmatter.md) - Photonic Computing
 - [Quantum-Hybrid](chips/quantum-hybrid.md) - Research Stage
+
+### Upcoming Analysis (In Development)
+- Groq - Language Processing Unit (LPU)
+- Tenstorrent - Grayskull & Wormhole
+- Qualcomm - Cloud AI 100
+- AMD - Instinct MI300 Series
+- Meta - MTIA
+- Samsung - NPU Solutions
+- Broadcom - Jericho3-AI
+- Microsoft - Azure NPU
+- Sambanova Systems - Cardinal SN30
 
 ### Comparative Analysis
 Cross-cutting analysis of key aspects:
