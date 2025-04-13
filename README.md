@@ -127,17 +127,6 @@ Detailed analysis of individual AI accelerator chips:
 - [Lightmatter](chips/lightmatter.md) - Photonic Computing
 - [Quantum-Hybrid](chips/quantum-hybrid.md) - Research Stage
 
-### Upcoming Analysis (In Development)
-- Groq - Language Processing Unit (LPU)
-- Tenstorrent - Grayskull & Wormhole
-- Qualcomm - Cloud AI 100
-- AMD - Instinct MI300 Series
-- Meta - MTIA
-- Samsung - NPU Solutions
-- Broadcom - Jericho3-AI
-- Microsoft - Azure NPU
-- Sambanova Systems - Cardinal SN30
-
 ### Comparative Analysis
 Cross-cutting analysis of key aspects:
 - [Performance Comparison](analysis/performance-comparison.md) - Detailed metrics comparison
