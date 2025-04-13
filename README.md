@@ -16,6 +16,10 @@ Unlike conventional hardware simulators or toolchains, this tool prioritizes cla
 
 ---
 
+### Results Preview
+
+---
+
 ## 📐 Architecture Modes
 
 ### 🔹 Baseline Architecture
