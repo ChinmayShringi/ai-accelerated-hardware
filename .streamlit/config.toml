@@ -1,0 +1,6 @@
+[server]
+enableCORS = false
+enableXsrfProtection = false
+
+[watcher]
+ignorePaths = ["/Users/chinmay_shringi/.pyenv/versions/3.12.2/lib/python3.12/site-packages/torch"] 

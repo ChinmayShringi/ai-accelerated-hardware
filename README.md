@@ -1,94 +1,123 @@
-# AI Accelerator Hardware Analysis
+# AI Accelerator Simulator: Visualizing Algebraic Enhancements in Systolic Arrays
 
-This repository contains detailed analysis of current and emerging AI accelerator hardware, focusing on architecture, performance, and market impact.
+A fully interactive and educational platform to visualize, simulate, and analyze AI hardware acceleration techniques using advanced systolic array architectures. This project was developed as part of an independent research submission and explores the inner workings of deep learning accelerator systems through both visual and performance perspectives.
 
-## Project Structure
+---
 
-### Current Chip Analysis
-Detailed analysis of individual AI accelerator chips:
-- [NVIDIA H200](chips/nvidia-h200.md) - Latest Hopper Architecture
-- [Google TPU v5p](chips/google-tpu.md) - Cloud AI Accelerator
-- [Cerebras CS-3](chips/cerebras-cs3.md) - Wafer-Scale Engine
-- [Intel Gaudi3](chips/intel-gaudi3.md) - Data Center AI Accelerator
-- [Apple Baltra](chips/apple-baltra.md) - In Development
-- [AWS Trainium3](chips/aws-trainium.md) - Cloud Training Accelerator
-- [IBM Analog](chips/ibm-analog.md) - Analog AI Chip
-- [EnCharge Edge](chips/encharge-edge.md) - Edge AI Accelerator
-- [Lightmatter](chips/lightmatter.md) - Photonic Computing
-- [Quantum-Hybrid](chips/quantum-hybrid.md) - Research Stage
+## 🚀 Project Description
 
-### Upcoming Analysis (In Development)
-- Groq - Language Processing Unit (LPU)
-- Tenstorrent - Grayskull & Wormhole
-- Qualcomm - Cloud AI 100
-- AMD - Instinct MI300 Series
-- Meta - MTIA
-- Samsung - NPU Solutions
-- Broadcom - Jericho3-AI
-- Microsoft - Azure NPU
-- Sambanova Systems - Cardinal SN30
+This simulator provides:
+- Cycle-accurate visualization of matrix operations on hardware-like systolic arrays
+- Interactive comparisons between multiple accelerator designs (Baseline, FIP, FFIP)
+- Real-time calculation of MAC utilization, throughput, and performance bottlenecks
+- A pedagogical and research-friendly frontend for architectural exploration
 
-### Comparative Analysis
-Cross-cutting analysis of key aspects:
-- [Performance Comparison](analysis/performance-comparison.md) - Detailed metrics comparison
-- [Architecture Analysis](analysis/architecture-analysis.md) - Design approaches evaluation
-- [Market Impact](analysis/market-impact.md) - Industry and economic effects
-- [Software Ecosystem](analysis/software-ecosystem.md) - Development environments and tools
-- [Environmental Impact](analysis/environmental-impact.md) - Sustainability analysis
-- [Technical Roadmap](analysis/technical-roadmap.md) - Future development trajectory
-- [Deployment Strategy](analysis/deployment-strategy.md) - Implementation guidelines
+Unlike conventional hardware simulators or toolchains, this tool prioritizes clarity, traceability, and hardware behavior explanation — ideal for instructional purposes or architecture validation.
 
-## Key Metrics Tracked
-- Peak Performance (FLOPS)
-- Memory Bandwidth
-- Power Consumption
-- Price/Performance Ratio
-- Software Ecosystem
-- Use Case Optimization
-- Environmental Impact
-- Total Cost of Ownership
+---
 
-## Analysis Categories
+## 📐 Architecture Modes
 
-### Technical Analysis
-- Architecture Design
-- Performance Metrics
-- Memory Systems
-- Power Efficiency
-- Cooling Solutions
-- Integration Methods
+### 🔹 Baseline Architecture
+- Traditional MAC operation grid
+- Direct multiplication per PE
+- Reference model to compare optimized architectures
+- RTL: `rtl/arith/mac_array.sv` (`FIP_METHOD=0`)
 
-### Market Analysis
-- Competitive Positioning
-- Cost Structure
-- Market Share
-- Growth Trends
-- Investment Requirements
-- Deployment Models
+📊 Metrics:
+- MACs: 1280
+- MACs/PE/Clock: 1.00
+- Utilization: 100.0%
+- Peak MACs: 1280
 
-### Implementation
-- Deployment Strategies
-- Software Integration
-- Infrastructure Requirements
-- Operational Management
-- Risk Assessment
-- Scaling Approaches
+### 🔸 Fast Inner Product (FIP)
+- Pre-adds adjacent elements to halve multiplication count
+- Doubles throughput per multiplier with fixed PE grid
+- RTL: `rtl/arith/mac_array.sv` (`FIP_METHOD=1`)
 
-## Future Updates
-This repository is actively maintained with regular updates on:
-- New chip releases
-- Performance benchmarks
-- Market developments
-- Technology trends
-- Implementation strategies
-- Environmental considerations
+📊 Metrics:
+- MACs: 1280
+- MACs/PE/Clock: 1.00
+- Utilization: 200.0%
+- Peak MACs: 640
 
-## References
-All analyses include detailed references to:
-- Technical Documentation
-- Research Papers
-- Industry Reports
-- Market Analysis
-- Environmental Studies
-- Implementation Guides
+### 🔺 Fused Fast Inner Product (FFIP)
+- Extends FIP with fused ops to reduce intermediate logic
+- Most compact architecture with high performance-per-area
+- RTL: `rtl/arith/mac_array.sv` (`FIP_METHOD=2`)
+
+📊 Metrics:
+- MACs: 1280
+- MACs/PE/Clock: 1.00
+- Utilization: 250.0%
+- Peak MACs: 512
+
+---
+
+## 🧠 Visualization Features
+
+### Configuration Controls
+- Choose architecture: Baseline, FIP, FFIP
+- Adjust array dimensions (rows/cols)
+- Load custom input matrices
+
+### Dynamic Simulation
+- Per-cycle systolic array state
+- PE-level heatmap of utilization
+- MACs per cycle charting
+
+### Performance Dashboard
+- Cycle count, total MACs, and throughput
+- Utilization vs theoretical peak comparison
+- Architecture efficiency insights
+
+---
+
+## 🛠️ Project Layout
+
+```
+project-root/
+├── compiler/           # Simulator logic and architecture model
+├── rtl/                # SystemVerilog modules (MXU, MAC arrays)
+├── visualizer/         # Streamlit-based interface
+├── tests/              # Verification and test scaffolds
+└── utils/              # Parameter helpers and generation scripts
+```
+
+---
+
+## 🧪 Getting Started
+
+### Installation:
+```bash
+pip install -r requirements.txt
+```
+
+### Launch Visual Simulator:
+```bash
+streamlit run visualizer/run.py
+```
+
+### Open in browser:
+```
+http://localhost:8501
+```
+
+---
+
+## 📈 Future Enhancements
+- Interactive timeline slider to explore cycles
+- Support for additional matrix multiplication algorithms (e.g., Winograd, Karatsuba)
+- Exportable performance logs
+- Support for float32/fixed16 inputs
+
+---
+
+## 📄 License
+
+This simulator is developed for educational and academic research purposes. Released under the MIT License.
+
+---
+
+<!-- Keywords: AI Accelerator, Systolic Array, Deep Learning Hardware, Hardware Visualization, MAC Optimization, FIP, FFIP, GEMM, Matrix Multiplication, RTL Simulation, Architecture Design, AI Hardware Research -->
 
