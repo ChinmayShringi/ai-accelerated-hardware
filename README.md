@@ -18,6 +18,10 @@ Unlike conventional hardware simulators or toolchains, this tool prioritizes cla
 
 ### Results Preview
 
+![image](https://github.com/user-attachments/assets/9b4439d8-aa96-42a5-91fa-0f78b05aa12b)
+![image](https://github.com/user-attachments/assets/9908560c-ca32-47dd-85ba-a59d3ecf8b4e)
+![image](https://github.com/user-attachments/assets/14535256-e78a-4e8d-95ad-266cbabc01cd)
+
 ---
 
 ## 📐 Architecture Modes
